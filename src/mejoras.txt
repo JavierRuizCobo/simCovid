@@ -1,0 +1,54 @@
+-Mascarilla:
+
+    Añadido wear mask percent a virusParameters
+    El estado de la persona no infectada con mascarilla es 4
+    El estado de la persona infectada con mascarilla es 6
+
+    Obtengo un número aleatorio y si este es menor o igual que el porcentaje de llevar mascarilla devuelve una persona con
+    mascarilla. Funciona igual para una persona que esta infectada o no lo esta.
+
+    Para infectar, si la persona no infectada y la persona infectada llevan mascarilla el porcentaje de transmisión
+    se reduce a un 25%, si una de la dos lleva mascarilla el porcentaje de transmisión se reduce a la mitad y si
+    no la lleva ninguna el porcentaje no se reduce.
+
+-Muerte:
+
+    Añadido virus kill percent a virusParameters
+    El estado de la persona muerta es 5
+
+    Si la persona esta infectada, obtengo un número aleatorio y si este es menor o igual que el parámetro killPercent
+    devuelvo una persona muerta.
+
+-Rodeado:
+
+    Añadido person is surrounded a virusParameters
+    El estado de la persona rodeada es 3
+
+    Obtengo la lista de infectados que rodean a la persona y si el tamaño de esta es mayor que el parámetro
+    personSurrounded devuelvo una persona que esta rodeada.
+
+-Alcance de transmisión:
+
+    Añadido transmissionRange a virusParameters
+    Añadido variable distance al constructor de persona con su getDistance() y setDistance
+
+    Obtengo las personas adyacentes según el rango que se ha introducido, cada persona que obtengo vecina respecto a la
+    base la asigno una distancia con la ayuda de las x y las y de las personas base y adyacente.
+
+    Al momento de infectar, el porcentaje de transmisión se divide entre la distancia que tiene esa persona asignada
+    respecto a la persona que se puede infectar.
+
+
+-Informe diario:
+
+    Recojo los infectados, los muertos y los recuperados de la población anterior, hago lo mismo con la población nueva,
+    para obtener los datos diarios resto los de la nueva con la vieja, a los infectados tengo que sumarlos las
+    muertes y recuperados porque al cambiar de infectado a muerto o recuperado se restaría 1 y podría dar números
+    negativos. Las diferencias de muertos, recuperados e infectado las paso a un método que las imprime por consola.
+    Al finalizar la simulación obtengo el total de muertos, recuperados y no infectados para imprimirlos por consola.
+
+
+-Detectar fin de juego:
+
+    Recojo cada dia el total de muertos, de recuperados y de no infectados, si la suma de estos es igual al producto de
+    las filas por las columnas rompo el bucle.
